@@ -11,11 +11,13 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 //defining paths for handlebars
+// if want to change directory or go back in directory
 const publicDirectoryPath = path.join(__dirname, "../public");
 const viewPath = path.join(__dirname, "../templates/views");
 const partialsPath = path.join(__dirname, "../templates/partials");
 
 //setup handlebars
+// set is used for setup handlebar engine and view location
 app.set("view engine", "hbs");
 app.set("views", viewPath);
 hbs.registerPartials(partialsPath);
@@ -28,7 +30,7 @@ app.use(express.static(publicDirectoryPath));
 app.get("", (req, res) => {
   res.render("index", {
     title: "weather app 1",
-    name: "himanshu aswal",
+    name: "Sudhanshu",
   });
 });
 
