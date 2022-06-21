@@ -2,9 +2,9 @@ const request = require("postman-request");
 
 const geocode = (name, callback) => {
   const url =
-    "https://api.mapbox.com/geocoding/v5/mapbox.places/" +
+  'https://api.mapbox.com/geocoding/v5/mapbox.places/'+
     encodeURIComponent(name) +
-    ".json?access_token=pk.eyJ1IjoiaGltYW5zaHVhc3dhbCIsImEiOiJja2RkNzhxcG4xOHd4MzRyeHdlaHhpa3hhIn0.CkuFU_aFlkw1fzKRp4EbEA&limit=1";
+    '.json?access_token=pk.eyJ1Ijoic3VkaGFuc2h1MiIsImEiOiJjbDNtMGNlNmIwMDA2M2lwYjl6aXU0bGY3In0.l2gDML0dUacAmu1udV3MEQ&limit=1';
   request({ url, json: true }, (error, { body }) => {
     if (error) {
       callback("Unable to connect to geoCode", undefined);
