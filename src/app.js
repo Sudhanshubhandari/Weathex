@@ -8,7 +8,7 @@ const geocode = require("./utils/geocode.js");
 const forecast = require("./utils/forecast.js");
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;// setting up a local host at 3000
 
 //defining paths for handlebars
 // if want to change directory or go back in directory
@@ -57,7 +57,7 @@ app.get("/weather", (req, res) => {
   );
 });
 
-app.get("/weatherinfo", (req, res) => {
+app.get("/weatherinfo", /*callback*/(req, res) => {
   if (!req.query.location) {
     return res.render("error", { error: "You must provide a location" });
   }
