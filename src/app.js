@@ -18,14 +18,14 @@ const partialsPath = path.join(__dirname, "../templates/partials");
 
 //setup handlebars
 // set is used for setup handlebar engine and view location
-app.set("view engine", "hbs");
+app.set("view engine", "hbs"); 
 app.set("views", viewPath);
-hbs.registerPartials(partialsPath);
+hbs.registerPartials(partialsPath);// register partial help handlebars for reuse
 
 //seting up static files. So that
 //we don't have to give location
 //of whole file present in public folder
-app.use(express.static(publicDirectoryPath));
+app.use(express.static(publicDirectoryPath));// now you can use the files which are in public directory
 
 app.get("", (req, res) => {
   res.render("index", {
